@@ -1,4 +1,15 @@
-[React Frontend] <---> [Django REST API] <---> [Yahoo Finance / SEC EDGAR APIs]
-                       |
-                       v
-                  [PostgreSQL Database]
+[React Frontend]
+       |
+       v
+[Django REST API]
+       |
+       +--> [Yahoo Finance API]
+       |
+       +--> [SEC EDGAR API]
+       |
+       +--> [FRED API]
+       |
+       +--> [Gemini AI Service]
+       |
+       v
+[PostgreSQL Database]
