@@ -1,0 +1,4 @@
+[React Frontend] <---> [Django REST API] <---> [Yahoo Finance / SEC EDGAR APIs]
+                       |
+                       v
+                  [PostgreSQL Database]
