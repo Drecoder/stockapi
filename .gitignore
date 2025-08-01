@@ -1,0 +1,10 @@
+# Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
