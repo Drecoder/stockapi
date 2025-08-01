@@ -2,72 +2,81 @@
 
 ## 1. Executive Summary
 
-This project is a full-stack stock data dashboard featuring a React frontend and a Django REST backend.
-It pulls live stock data from Yahoo Finance and will eventually integrate SEC EDGAR filings and AI-generated insights.
+This project is a full-stack stock and macroeconomic data dashboard featuring a React frontend and a Django REST backend.  
+It pulls live stock data from **Yahoo Finance**, **macroeconomic indicators from FRED**, and **SEC EDGAR filings** for corporate disclosures.  
+It also integrates **Gemini AI** for generating intelligent financial insights and summaries.  
 
 Key goals:
-- Provide real-time stock quotes
+- Provide real-time stock quotes and macroeconomic indicators
 - Manage user watchlists
 - Support historical data visualization and advanced analytics
+- Leverage AI to produce actionable market summaries
+
+---
 
 ## 2. System Architecture
 
 ![System Architecture](docs/system-architecture.png)
 
 ### Components:
-- **React Frontend:** User interface for searching stocks and managing watchlists.
-- **Django REST API:** Backend serving stock data and persisting user data.
-- **External APIs:** Yahoo Finance and SEC EDGAR for financial data.
+- **React Frontend:** User interface for searching stocks, viewing macroeconomic data, and managing watchlists.
+- **Django REST API:** Backend serving financial and macroeconomic data, plus AI-generated insights.
+- **External APIs:**  
+  - **Yahoo Finance** — Stock quotes, historical data  
+  - **SEC EDGAR** — Company filings and disclosures  
+  - **FRED** — Federal Reserve macroeconomic indicators  
+  - **Gemini AI** — Natural language summaries and market insights
 - **Database:** PostgreSQL or SQLite for persistence.
 
-Data flows from external APIs to Django, then to React, with persistent storage.
+Data flows from multiple APIs into Django, where it is processed, stored, and exposed to the frontend.
+
+---
 
 ## 3. Scope of Work
 
 ### Core Features
-- Stock quote retrieval and normalization
+- Stock quote retrieval and normalization (Yahoo Finance)
+- Macroeconomic indicator retrieval (FRED)
+- Company filing retrieval (SEC EDGAR)
+- AI-powered market summaries (Gemini)
 - Watchlist CRUD with persistent storage
 - REST API endpoints for frontend integration
 - Responsive UI/UX with live updates
 
 ### Future Features
-- SEC EDGAR filing integration
-- AI-based stock analysis and summaries
+- AI-based sentiment analysis of financial news
+- Deeper integration with SEC EDGAR filing index
 - User authentication and preferences
-- Push notifications for stock alerts
+- Push notifications for market alerts
 
-## 4. Sprint Plan (2-Week Sprints)
+---
 
-| Sprint | Goals                                   | Deliverables                            |
-|--------|-----------------------------------------|---------------------------------------|
-| 1      | Backend setup & Yahoo Finance API       | Working REST endpoint, CORS enabled   |
-| 2      | React frontend basics                    | Stock search and display               |
-| 3      | Watchlist management                     | Full CRUD API and UI                   |
-| 4      | Historical data & charting               | Backend storage + frontend charts      |
-| 5      | Advanced features                        | AI integration, SEC EDGAR integration  |
+## 4. Kanban Workflow
+
+This project follows **Kanban** for continuous delivery:
+
+| Column | Description |
+|--------|-------------|
+| Backlog | All planned features and improvements |
+| Ready | Groomed tasks ready for development |
+| In Progress | Tasks currently being implemented |
+| Testing / Review | Awaiting verification and approval |
+| Done | Completed and deployed |
+
+---
 
 ## 5. Backlog / Future Enhancements
-- AI-generated stock reports
-- SEC filings deep integration
+- AI-generated stock & macroeconomic reports
+- Automated portfolio performance analysis
 - Authentication & user profiles
 - Real-time push notifications
-- Performance improvements & caching
+- API performance optimization & caching
 
 ---
 
 ## 6. How to Run Locally
 
 1. Clone the repo  
-2. Install backend dependencies: `pip install -r requirements.txt`  
-3. Run Django server: `python manage.py runserver 4000`  
-4. In a separate terminal, start React frontend: `npm start`  
-5. Open browser at `http://localhost:3000`
-
----
-
-## 7. Contact & Contribution
-
-Open to contributions, feedback, and suggestions. Reach out via GitHub issues or email.
-
----
-
+2. Install backend dependencies:  
+   ```bash
+   pip install -r requirements.txt
